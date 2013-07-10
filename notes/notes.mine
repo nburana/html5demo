@@ -1,0 +1,21 @@
+SOURCE: http://lifehacker.com/5416100/how-html5-will-change-the-way-you-use-the-web
+Offline storage
+Canvas drawing
+Native video and audio streaming support
+Geolocation
+Smarter forms
+Web Sockets
+File Access
+
+Focus on Canvas
+- Kinetic JS for 2D
+- Used Three.js WebGL lib
+    - examples: http://threejs.org/
+
+Tools
+- https://github.com/bjnortier/shapesmith/wiki
+    - http://shapesmith.net/
+- http://errolschwartz.com/projects/threescene/
+- ammo.js (bullet physics engine)
+    - http://kripken.github.io/ammo.js/examples/new/ammo.html
+- blender.org

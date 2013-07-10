@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/static/main.css" />
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+        <script src="/static/three.js"></script>
+        <script src="/static/helvetiker_regular.typeface.js"></script>
+        <script src="/static/ammo.js"></script>
+        <script src="/static/physi.js"></script>
+        <script src="/static/STLLoader.js"></script>
+        <script src="/static/main.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+                <h1>Move it Nathan!</h1>
+            </div>
+
+            <div id="maincanvas"> </div>
+            
+            <div class="buttons">
+                <button id="animatescene">Animate Scene</button>
+                <button id="createcrate">Make a Magic Crate</button>
+                <button id="createbakes">Add Nathan</button>
+                <button id="createbernice">Add Bernice</button>
+            <div>
+
+            <audio id="bakesaudio">
+              <source src="/static/baby.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <audio id="berniceaudio">
+              <source src="/static/baby.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </body>
+
+    <script defer="defer" type="text/javascript">
+        (function($) {
+            new Demo({
+                el: $('#container')
+            });
+        })(jQuery);
+    </script>
+</html>
