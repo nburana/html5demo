@@ -31,8 +31,8 @@ var Demo = Backbone.View.extend({
         this.initMaterials();
         this.initCamera();
         this.initScene();
-        this.initLights();
         this.initTrees();
+        this.initLights();
 
         this.render();
     },
@@ -47,7 +47,7 @@ var Demo = Backbone.View.extend({
             return;
 
         // request new frame (like setInterval)
-        requestAnimationFrame(function(){
+        requestAnimationFrame(function() {
             self.animate();
         });
     },
@@ -380,16 +380,6 @@ var Demo = Backbone.View.extend({
         this.scene.add(this.scoreContainer);
     },
  
-    bakesAudio: function() {
-        $('#bakesaudio').load();
-        $('#bakesaudio').get(0).play();
-    },
-
-    berniceAudio: function() {
-        $('#berniceaudio').load();
-        $('#berniceaudio').get(0).play();
-    },
-
     gameOver: function() {
         var textGeom = new THREE.TextGeometry("GAME OVER", {
             size: 100,
@@ -414,9 +404,23 @@ var Demo = Backbone.View.extend({
         this.stopAnimation = true;
     },
 
+    bakesAudio: function() {
+        $('#bakesaudio').load();
+        $('#bakesaudio').get(0).play();
+    },
+
+    berniceAudio: function() {
+        $('#berniceaudio').load();
+        $('#berniceaudio').get(0).play();
+    },
+
     generateRandomPosition: function() {
         var result = Math.floor(Math.random() * (400 - -400 + 1)) + -400;
         return result;
+    },
+
+    toDegrees: function(degree) {
+        return degree * (Math.PI/180);
     },
 
     captureKeys: function(e) {
@@ -473,9 +477,5 @@ var Demo = Backbone.View.extend({
         }
         
         this.render();
-    },
-
-    toDegrees: function(degree) {
-        return degree * (Math.PI/180);
     }
 });
