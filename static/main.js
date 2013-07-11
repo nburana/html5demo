@@ -138,6 +138,7 @@ var Demo = Backbone.View.extend({
         var self = this;
 
         this.scene = new Physijs.Scene;
+        this.scene.setGravity(new THREE.Vector3( 0, -100, 0 ));
        
         var back = new Physijs.BoxMesh(new THREE.PlaneGeometry(2000, 2000), this.backgroundMaterial, 0);
         back.overdraw = true;
@@ -180,7 +181,7 @@ var Demo = Backbone.View.extend({
     
     initTrees: function() {
         var self = this;
-        _.each(_.range(5), function(i) {
+        _.each(_.range(3), function(i) {
             self.createTree();
         });
     },
