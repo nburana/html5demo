@@ -20,7 +20,6 @@
             <div id="maincanvas"> </div>
             
             <div class="buttons">
-                <button id="animatescene">Animate Scene</button>
                 <button id="createcrate">Make a Magic Crate</button>
                 <button id="createbakes">Add Nathan</button>
                 <button id="createbernice">Add Bernice</button>
@@ -40,9 +39,11 @@
 
     <script defer="defer" type="text/javascript">
         (function($) {
-            new Demo({
+            var demo = new Demo({
                 el: $('#container')
             });
+
+            demo.animateScene();
         })(jQuery);
     </script>
 </html>
