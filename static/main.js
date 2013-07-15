@@ -180,10 +180,9 @@ var Demo = Backbone.View.extend({
     },
     
     initTrees: function() {
-        var self = this;
-        _.each(_.range(3), function(i) {
-            self.createTree();
-        });
+        this.createTree(-150, -100);
+        this.createTree(-400, -300);
+        this.createTree(300, -380);
     },
 
     createBakes: function() {
@@ -325,25 +324,22 @@ var Demo = Backbone.View.extend({
         return crate;
     },
 
-    createTree: function() {
-        var randomX = this.generateRandomPosition();
-        var randomY = this.generateRandomPosition();
-
+    createTree: function(x, z) {
         var treeTop = new Physijs.ConeMesh(new THREE.CylinderGeometry(100, 1, 100, 100, 100, false),
                                            this.treeTopMaterial,
                                            0);
-        treeTop.position.x = randomX;
+        treeTop.position.x = x;
         treeTop.position.y = 200;
-        treeTop.position.z = randomY;
+        treeTop.position.z = z;
         treeTop.rotation.x = this.toDegrees(180);
         this.scene.add(treeTop);
 
         var treeTrunk = new Physijs.CylinderMesh(new THREE.CylinderGeometry(20, 20, 200, 5, 5, false),
                                                  this.treeTrunkMaterial,
                                                  0);
-        treeTrunk.position.x = randomX;
+        treeTrunk.position.x = x;
         treeTrunk.position.y = 50;
-        treeTrunk.position.z = randomY;
+        treeTrunk.position.z = z;
         this.scene.add(treeTrunk);
     },
 
@@ -397,7 +393,7 @@ var Demo = Backbone.View.extend({
         this.textContainer.doubleSided = false;
         this.textContainer.position.x = -400;
         this.textContainer.position.y = 150;
-        this.textContainer.position.z = -200;
+        this.textContainer.position.z = 50;
         this.textContainer.rotation.y = 0.04426941110861904;
 
         this.scene.add(this.textContainer);
