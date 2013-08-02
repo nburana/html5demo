@@ -21,6 +21,7 @@ var Demo = Backbone.View.extend({
         this.BAKES_SPEED = 10;
         this.BERNICE_SPEED = 1;
         this.GENERAL_SPEED = 5;
+        this.counter = 0;
 
         //key events
         _.bindAll(this);
@@ -42,6 +43,13 @@ var Demo = Backbone.View.extend({
 
         this.animateBernice();
         this.render();
+        
+        if(this.counter % 2000 == 0) {
+            $('#ekbaudio').load();
+            $('#ekbaudio').get(0).play();
+        }
+
+        this.counter++;
 
         if(this.stopAnimation)
             return;
@@ -404,6 +412,7 @@ var Demo = Backbone.View.extend({
     bakesAudio: function() {
         $('#bakesaudio').load();
         $('#bakesaudio').get(0).play();
+        this.counter++;
     },
 
     berniceAudio: function() {
